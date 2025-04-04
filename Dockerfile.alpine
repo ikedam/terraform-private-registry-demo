@@ -1,0 +1,10 @@
+FROM alpine:latest
+
+# Copy the self-signed certificate from the build context and add it to the trusted store
+COPY certs/server.crt /usr/local/share/ca-certificates/server.crt
+
+# Install curl and update the trusted certificates
+RUN apk add --no-cache curl ca-certificates && \
+    mkdir -p /etc/ssl/certs && \
+    chmod 755 /etc/ssl/certs && \
+    update-ca-certificates --verbose
