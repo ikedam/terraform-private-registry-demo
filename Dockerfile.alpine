@@ -5,5 +5,4 @@ COPY certs/server.crt /usr/local/share/ca-certificates/server.crt
 
 # Install curl and other tools, and then update the trusted certificates
 RUN apk add --no-cache curl ca-certificates openssl gpg gpg-agent bash zip jq go \
-    && mkdir -p /etc/ssl/certs \
     && update-ca-certificates

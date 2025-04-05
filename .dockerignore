@@ -1,0 +1,12 @@
+/.git
+/example-terraform
+/registry
+/.dockerignore
+/build-registry.sh
+/docker-compose.yaml
+/Dockerfile.alpine
+/Dockerfile.terraform
+/go.mod
+/go.sum
+/main.go
+/nginx.conf

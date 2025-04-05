@@ -1,4 +1,19 @@
 services:
+  terraform:
+    build:
+      context: .
+      dockerfile: Dockerfile.terraform
+    environment:
+      - TF_LOG
+      - TF_CLI_ARGS
+    volumes:
+      - ./example-terraform:/workspace
+    working_dir: /workspace
+    networks:
+      - default
+    depends_on:
+      - nginx
+
   nginx:
     image: nginx:1.27.4-alpine
     volumes:
