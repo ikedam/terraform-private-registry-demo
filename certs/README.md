@@ -1,5 +1,9 @@
+NOTE: private keys in this directory are just for demonstration purposes. DO NOT use for other purposes.
+
+
+
 Created with:
 
 ```
-docker run --rm -v "$(pwd)/certs:/certs" -w /certs alpine/openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout server.key -out server.crt -subj "/CN=example.com"
+docker compose run --rm --no-deps alpine openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout certs/server.key -out certs/server.crt -subj "/CN=example.com"
 ```
