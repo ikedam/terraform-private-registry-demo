@@ -14,15 +14,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.alpine
-    command:
-      - curl
-      - -s
-      - https://example.com
     volumes:
       - .:/workspace
     working_dir: /workspace
     networks:
       - default
+    # command:
+    #   - curl
+    #   - -s
+    #   - https://example.com
     # depends_on:
     #   - nginx
 
