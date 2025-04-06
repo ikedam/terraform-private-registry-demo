@@ -57,7 +57,7 @@ for arch in amd64 arm64; do
   pushd "${archdir}"
   zip "${basename}.zip" "${basename}"
   sha256sum "${basename}.zip" > "${basename}_SHA256SUMS"
-  gpg --output "${basename}_SHA256SUMS.sig" --detach-sig "${basename}_SHA256SUMS"
+  gpg --batch --yes --output "${basename}_SHA256SUMS.sig" --detach-sig "${basename}_SHA256SUMS"
   cat <<EOF >index.json
 {
   "protocols": [

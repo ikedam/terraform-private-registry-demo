@@ -9,6 +9,7 @@ import (
 	providerschema "github.com/hashicorp/terraform-plugin-framework/provider/schema"
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
+	"github.com/hashicorp/terraform-plugin-framework/types"
 )
 
 // Provider implementation
@@ -38,6 +39,10 @@ func (p *helloProvider) DataSources(_ context.Context) []func() datasource.DataS
 // DataSource implementation
 type helloWorldDataSource struct{}
 
+type helloWorldModel struct {
+	Message types.String `tfsdk:"message"`
+}
+
 func newHelloWorldDataSource() datasource.DataSource {
 	return &helloWorldDataSource{}
 }
@@ -58,8 +63,8 @@ func (d *helloWorldDataSource) Schema(_ context.Context, _ datasource.SchemaRequ
 }
 
 func (d *helloWorldDataSource) Read(ctx context.Context, req datasource.ReadRequest, resp *datasource.ReadResponse) {
-	resp.Diagnostics.Append(resp.State.Set(ctx, map[string]any{
-		"message": "Hello, World!",
+	resp.Diagnostics.Append(resp.State.Set(ctx, helloWorldModel{
+		Message: types.StringValue("Hello, World!"),
 	})...)
 }
 
