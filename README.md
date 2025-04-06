@@ -48,7 +48,7 @@ Changes to Outputs:
 docker compose run --rm alpine /bin/bash build-registry.sh
 ```
 
-コードを変更した場合、署名が変わって lock ファイルと一致しなくなるため、 `example-terraform/.terraform` (あれば) と `example-terraform/.terraform.lock.hcl` を削除してロックファイルを再生成してください:
+上記を実行した場合、zip ファイルの署名が変わって lock ファイルと一致しなくなるため、 `example-terraform/.terraform` (あれば) と `example-terraform/.terraform.lock.hcl` を削除してロックファイルを再生成してください:
 
 ```
 docker compose run --rm terraform providers lock -platform=linux_arm64 -platform=linux_amd64

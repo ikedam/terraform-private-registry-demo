@@ -23,7 +23,6 @@ cat <<EOF >"registry/providers/${NAMESPACE}/${PROVIDER}/versions/index.json"
   "versions": [
     {
       "version": "${VERSION}",
-      "protocols": ["6.0"],
       "platforms": [
         {"os": "linux", "arch": "amd64"},
         {"os": "linux", "arch": "arm64"}
