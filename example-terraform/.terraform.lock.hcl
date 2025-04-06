@@ -5,9 +5,9 @@ provider "example.com/example/hello" {
   version     = "1.0.0"
   constraints = "~> 1.0.0"
   hashes = [
-    "h1:AF6OgRjRNAcrEdIcDEWy8L6swSQtSy/2mLq5c96JEDQ=",
-    "h1:EtdkfZuqNaDFyM9AyRmYdF7/Hyluf2vSdldT0d//EMs=",
-    "zh:4fef07ada5730d00e062a1621246e8ed1b2bf2bf048392e0477aa1be39df78af",
-    "zh:d0d0351e9ea30074de8fe15df630c7e8327579cea63df958e4194e31d32fa3af",
+    "h1:lEHFGCkimJ3FhkX4zneYyQ55Z0s/szSL/Z0Ru17rQrs=",
+    "h1:pVQsA1IAn81+CACODROPErvIXE2oumHA6XmzDTyHvpw=",
+    "zh:29d86a1354dfd74799f753fadf079d022c16d8f92f189a44b871acdd3f9cee94",
+    "zh:f57f6a379c014dcf3c522964aef8fe38e1b1afb1f781256539c4baa10e77ed0f",
   ]
 }

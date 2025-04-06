@@ -4,16 +4,16 @@
   ],
   "os": "linux",
   "arch": "arm64",
-  "filename": "terraform-provider-hello_1.0.0_linux_arm64.zip",
-  "download_url": "terraform-provider-hello_1.0.0_linux_arm64.zip",
-  "shasums_url": "terraform-provider-hello_1.0.0_linux_arm64_SHA256SUMS",
-  "shasums_signature_url": "terraform-provider-hello_1.0.0_linux_arm64_SHA256SUMS.sig",
-  "shasum": "d0d0351e9ea30074de8fe15df630c7e8327579cea63df958e4194e31d32fa3af",
+  "filename": "terraform-provider-hello_v1.0.0_linux_arm64.zip",
+  "download_url": "terraform-provider-hello_v1.0.0_linux_arm64.zip",
+  "shasums_url": "terraform-provider-hello_v1.0.0_linux_arm64_SHA256SUMS",
+  "shasums_signature_url": "terraform-provider-hello_v1.0.0_linux_arm64_SHA256SUMS.sig",
+  "shasum": "29d86a1354dfd74799f753fadf079d022c16d8f92f189a44b871acdd3f9cee94",
   "signing_keys": {
     "gpg_public_keys": [
       {
-        "key_id": "13886D8D49C08FB1",
-        "ascii_armor": "-----BEGIN PGP PUBLIC KEY BLOCK-----\n\nmDMEZ/HD9BYJKwYBBAHaRw8BAQdAZGqrl9+kYA5bPL5+HumRGChP/Fzpu5EOE8HO\ntKy7Wm+0IlByb3ZpZGVyIERlbW8gPGlrZWRhbUBleGFtcGxlLmNvbT6IkwQTFgoA\nOxYhBOnQmo7sw49fTIyKzBOIbY1JwI+xBQJn8cP0AhsDBQsJCAcCAiICBhUKCQgL\nAgQWAgMBAh4HAheAAAoJEBOIbY1JwI+xeBUA/0A64bcXca4fKPIGQeNm8jFfaIhB\nkp5bQJ/ovjbEiK4HAP4581Ulq9b861wRzizUkYjFaqmLBChKt1HxWpNTc7FNAQ==\n=7MYt\n-----END PGP PUBLIC KEY BLOCK-----\n"
+        "key_id": "4794E56AC17DADB3",
+        "ascii_armor": "-----BEGIN PGP PUBLIC KEY BLOCK-----\n\nmDMEZ/HX3RYJKwYBBAHaRw8BAQdAwtgb5Yc+Eyg5AurKOIzt0dMcXUX3tsV7Xilw\nU/QgRpu0IlByb3ZpZGVyIERlbW8gPGlrZWRhbUBleGFtcGxlLmNvbT6IkwQTFgoA\nOxYhBIl8EvH+RE0YUDVCgUeU5WrBfa2zBQJn8dfdAhsDBQsJCAcCAiICBhUKCQgL\nAgQWAgMBAh4HAheAAAoJEEeU5WrBfa2ziNEA/A3kcQhN4rhkWDkz+r9aCzFQove0\nqNfOpE/HrOdVG8p9AP9LYwjqe4EMFecCahi3tk5MzlLg/mcgSewutDuYwMLcDA==\n=mcPP\n-----END PGP PUBLIC KEY BLOCK-----\n"
       }
     ]
   }

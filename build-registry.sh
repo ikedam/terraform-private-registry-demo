@@ -49,13 +49,14 @@ GPG_ASCII_ARMOR="$(gpg --armor --export "${GPG_USER_ID}" | jq -Rs -c .)"
 # https://developer.hashicorp.com/terraform/internals/provider-registry-protocol#find-a-provider-package
 for arch in amd64 arm64; do
   archdir="registry/providers/${NAMESPACE}/${PROVIDER}/${VERSION}/download/linux/${arch}"
-  basename="terraform-provider-${PROVIDER}_${VERSION}_linux_${arch}"
+  binaryname="terraform-provider-${PROVIDER}_v${VERSION}"
+  basename="terraform-provider-${PROVIDER}_v${VERSION}_linux_${arch}"
   mkdir -p "${archdir}" || true
   CGO_ENABLED=0 GOOS=linux GOARCH=${arch} go build \
-    -o "${archdir}/${basename}" \
+    -o "${archdir}/${binaryname}" \
     main.go
   pushd "${archdir}"
-  zip "${basename}.zip" "${basename}"
+  zip "${basename}.zip" "${binaryname}"
   sha256sum "${basename}.zip" > "${basename}_SHA256SUMS"
   gpg --batch --yes --output "${basename}_SHA256SUMS.sig" --detach-sig "${basename}_SHA256SUMS"
   cat <<EOF >index.json
