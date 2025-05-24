@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Terraform プライベートレジストリーデモサイト</title>
+</head>
+<body>
+  <h1>Terraform プライベートレジストリーデモサイト</h1>
+  <p>このサイトは、Terraform のプライベートレジストリーのデモ用です。</p>
+  <p>以下のような Terraform テンプレートでデモ用のプロバイダーを利用できます:</p>
+  <pre><code>terraform {
+  required_providers {
+    hello = {
+      source  = "tf-demo.ikedam.jp/example/hello"
+      version = "~> 1.0.0"
+    }
+  }
+}
+
+data "hello_world" "message" {
+}
+
+output "message" {
+  value = data.hello_world.message.message
+}
+</code></pre>
+</body>
