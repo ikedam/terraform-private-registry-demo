@@ -1,0 +1,82 @@
+name: Release
+
+on:
+  release:
+    types:
+      - created
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+
+# Set permissions to write to gh-pages branch
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build and Publish
+    runs-on: ubuntu-latest
+
+    env:
+      CGO_ENABLED: 0
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get version from tag
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/}
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Build for all platforms
+        run: |
+          mkdir -p build
+          platforms=("darwin_amd64" "darwin_arm64" "linux_amd64" "linux_arm64" "windows_amd64" "windows_arm64")
+
+          for platform in "${platforms[@]}"; do
+            os="${platform%_*}"
+            arch="${platform#*_}"
+
+            echo "Building for ${os}/${arch}..."
+
+            output_name="terraform-provider-hello_${VERSION}_${os}_${arch}"
+            if [ "${os}" = "windows" ]; then
+              output_name="${output_name}.exe"
+            fi
+
+            # Set -buildvcs=false to avoid `error obtaining VCS status: exit status 128`
+            docker run --rm \
+              -v "$(pwd):/workspace" \
+              -w /workspace \
+              -e GOOS="${os}" \
+              -e GOARCH="${arch}" \
+              -e CGO_ENABLED=0 \
+              golang:1.23.4-bookworm  \
+              go build -buildvcs=false -o "build/${output_name}" .
+          done
+
+      - name: Checkout gh-pages branch
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          # Fetch only the gh-pages branch
+          git fetch --depth=1 origin gh-pages:gh-pages
+          git worktree add pages gh-pages
+
+      - name: Build Terraform Provider Registry
+        env:
+          TFREGBUILDER_GPG_KEY: ${{ secrets.TFREGBUILDER_GPG_KEY }}
+        run: |
+          mkdir -p pages/providers/example
+          docker run --rm -v "$(pwd):/workspace" -w /workspace \
+            -e TFREGBUILDER_GPG_KEY \
+            ghcr.io/ikedam/terraform-registry-builder \
+            ./build \
+            ./pages/providers/example
+
+      - name: Commit and push gh-pages
+        run: |
+          cd pages
+          git add .
+          git commit -m "Update Terraform provider repository for ${VERSION}"
+          git push origin gh-pages
