@@ -8,12 +8,12 @@
   "download_url": "terraform-provider-hello_v1.0.0_linux_amd64.zip",
   "shasums_url": "terraform-provider-hello_v1.0.0_linux_amd64_SHA256SUMS",
   "shasums_signature_url": "terraform-provider-hello_v1.0.0_linux_amd64_SHA256SUMS.sig",
-  "shasum": "f57f6a379c014dcf3c522964aef8fe38e1b1afb1f781256539c4baa10e77ed0f",
+  "shasum": "839b4c3c833b34ea14d9914f7983620803052000816bcedbde5b66a7fe368d7d",
   "signing_keys": {
     "gpg_public_keys": [
       {
-        "key_id": "4794E56AC17DADB3",
-        "ascii_armor": "-----BEGIN PGP PUBLIC KEY BLOCK-----\n\nmDMEZ/HX3RYJKwYBBAHaRw8BAQdAwtgb5Yc+Eyg5AurKOIzt0dMcXUX3tsV7Xilw\nU/QgRpu0IlByb3ZpZGVyIERlbW8gPGlrZWRhbUBleGFtcGxlLmNvbT6IkwQTFgoA\nOxYhBIl8EvH+RE0YUDVCgUeU5WrBfa2zBQJn8dfdAhsDBQsJCAcCAiICBhUKCQgL\nAgQWAgMBAh4HAheAAAoJEEeU5WrBfa2ziNEA/A3kcQhN4rhkWDkz+r9aCzFQove0\nqNfOpE/HrOdVG8p9AP9LYwjqe4EMFecCahi3tk5MzlLg/mcgSewutDuYwMLcDA==\n=mcPP\n-----END PGP PUBLIC KEY BLOCK-----\n"
+        "key_id": "891aaed73ca2663e",
+        "ascii_armor": "-----BEGIN PGP PUBLIC KEY BLOCK-----\n\nxjMEaEKgsxYJKwYBBAHaRw8BAQdAVRpwHoGe7e0UAVLgRQjzsC6/9ee2m9cwXCZX\nOMG/xKTNIlByb3ZpZGVyIERlbW8gPGlrZWRhbUBleGFtcGxlLmNvbT7CkwQTFgoA\nOxYhBNwkA7Ljw2KX2pSU6Ykartc8omY+BQJoQqCzAhsDBQsJCAcCAiICBhUKCQgL\nAgQWAgMBAh4HAheAAAoJEIkartc8omY+z8cBANpR3rue+04IBS3Bi7M3hD3Y0e7N\nf4DTrg/YUgCiyqdiAQCGq6m+jdBTR5Y/vL6lago3KVrRTa1kXkyxuxnMwbEpAA==\n=1EXe\n-----END PGP PUBLIC KEY BLOCK-----"
       }
     ]
   }

@@ -1,6 +1,8 @@
 # 静的コンテンツのサイトによる Terraform のプライベートレジストリーデモ
 
 プライベートレジストリーの構築のデモです。
+https://github.com/ikedam/terraform-registry-builder
+を使用するバージョンです。
 
 ## 概要
 
